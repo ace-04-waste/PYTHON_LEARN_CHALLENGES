@@ -409,6 +409,162 @@ for color in colors:
   print("Thread shed sold {0} threads of {1} ".format(color_count(color),color))
 
 
+######################################################################################
+#string code challenges
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+# i defined a function with a parameter of word. I'll pass a word in so function can tally unique letters
+
+def unique_english_letters(word):
+  #start counter at 0
+  uniques = 0
+  #for each i in letters list, if i is in my word that I pass in then tally counter, return tally
+  for letter in letters:
+    if letter in word:
+      uniques += 1
+  return uniques
+
+
+
+# Uncomment these function calls to test your function:
+print(unique_english_letters("mississippi"))
+# should print 4
+print(unique_english_letters("Apple"))
+# should print 4
+
+#--------------
+# i can write a function that takes a word and letter
+#that will count how many times that letter appears in word
+def count_char_x(word,x):
+  #store how many times in new var
+  count_x = word.count(x)
+  #return var value for use
+  return count_x
+print(count_char_x("tally","y"))
+
+
+# Uncomment these function calls to test your tip function:
+print(count_char_x("mississippi", "s"))
+# should print 4
+print(count_char_x("mississippi", "m"))
+# should print 1
+
+#------------------------------------------------
+# Write your substring_between_letters function here:
+def substring_between_letters(word, start, end):
+  #use .find to find start and end
+  starter = word.find(start)
+  ender = word.find(end)
+  #if starter and ender is not at the end position then return substring from word
+  if starter > -1 and ender > -1:
+    #need the +1 so that I do not inc the starter char
+    return(word[starter+1:ender]) 
+  return word
+    
+
+ 
+
+# Uncomment these function calls to test your function:
+print(substring_between_letters("apple", "p", "e"))
+# should print "pl"
+print(substring_between_letters("apple", "p", "c"))
+# should print "apple"
+#===================================================================
+# Write your x_length_words function here:
+def x_length_words(sentence, x):
+  #first i need to break up the sentence into words at the space
+  words = sentence.split(" ")
+  #then for each word in words check to see if word has a 
+  #length greater than or equal to x
+  for word in words:
+    if len(word) >= x:
+      return True
+    return False
+  
+    
+
+# Uncomment these function calls to test your tip function:
+print(x_length_words("i like apples", 2))
+# should print False
+print(x_length_words("he likes apples", 2))
+# should print True
+ #------------------------------------------------------------------
+ # Write your check_for_name function here:
+def check_for_name(sentence, name):
+  return name.lower() in sentence.lower()
+
+# Uncomment these function calls to test your function:
+print(check_for_name("My name is Jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is Samantha", "Jamie"))
+# should print False
+
+#-------------------------------------------------------------------------
+# Write your every_other_letter function here:
+def every_other_letter(word):
+  every_other =""
+  #for the range of word check every other letter from 0 to end 
+  for i in range(0, len(word), 2):
+    #add every other letter from word to empty string
+    every_other += word[i]
+  return every_other
+    
+
+# Uncomment these function calls to test your function:
+print(every_other_letter("Codecademy"))
+# should print Cdcdm
+print(every_other_letter("Hello world!"))
+# should print Hlowrd
+print(every_other_letter(""))
+# should print 
+
+#--------------------------------------------------------------
+# Write your reverse_string function here:
+def reverse_string(word):
+  x = word[::-1]
+  return x
+
+
+# Uncomment these function calls to test your  function:
+print(reverse_string("Codecademy"))
+# should print ymedacedoC
+print(reverse_string("Hello world!"))
+# should print !dlrow olleH
+print(reverse_string(""))
+# should print
+
+#--------------------------------------------------------------
+# Write your make_spoonerism function here:
+def make_spoonerism(word1,word2):
+  #return first letter from word2 plus rest of word1
+  #add space 
+  #add first letter from word1 plus rest of word2
+  return word2[0]+word1[1:] + " " +word1[0]+word2[1:]
+  
+
+# Uncomment these function calls to test your function:
+print(make_spoonerism("Codecademy", "Learn"))
+# should print Lodecademy Cearn
+print(make_spoonerism("Hello", "world!"))
+# should print wello Horld!
+print(make_spoonerism("a", "b"))
+# should print b a
+print(make_spoonerism("panda", "life"))
+
+#--------------------------------------------------------
+# Write your add_exclamation function here:
+def add_exclamation(word):
+  while(len(word) < 20):
+    word += "!"
+  return word
+
+print(add_exclamation("do it"))
+# Uncomment these function calls to test your function:
+#print(add_exclamation("Codecademy"))
+# should print Codecademy!!!!!!!!!!
+#print(add_exclamation("Codecademy is the best place to learn"))
+# should print Codecademy is the best place to learn
 
 
 
