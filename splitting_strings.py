@@ -376,12 +376,39 @@ total_sales = 0
 
 for x in sale:
   total_sales +=  float(x.strip("$"))
-print(total_sales)
+#print(total_sales)
  
+#print(thread_sold)
 
-
-
+thread_sold_split = []
+for thread in thread_sold:
+  for color in thread.split("&"): 
+    thread_sold_split.append(color)
+#print(thread_sold_split)
   
+#I can create a function that starts to count a colour that is passed in as an argument
+# for each element in the thread list if the color I pass in equals the color value then tally
+# #return the value total at end of loop   
+def color_count(color):
+  color_total = 0
+  for thread_color in thread_sold_split:
+    if color == thread_color:
+      color_total +=1
+  return color_total
+#printout the total of argument given eg white
+print(color_count("white"))
+
+
+
+#i can now start a new list that stores all the colors
+colors = ['red','yellow','green','white','black','blue','purple']
+#for each value in the list of colors print the number total and color using .format where 
+#i passed in the values from the color_count function with an argument using list loop
+
+for color in colors:
+  print("Thread shed sold {0} threads of {1} ".format(color_count(color),color))
+
+
 
 
 
