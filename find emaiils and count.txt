@@ -1,0 +1,15 @@
+file = open('email.txt')
+content = file.readlines()  # Read lines into a list
+file.close()  # Close the file
+
+email_list = []
+count = 0
+for line in content:
+    if 'From ' in line:
+        words = line.split()
+        if len(words) > 1:
+            email_list.append(words[1])
+            count = count +1 
+
+print(email_list)
+print(count)

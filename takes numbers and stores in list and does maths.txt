@@ -1,0 +1,21 @@
+def lister():
+    my_list = []
+    while True:
+        inp = input('What is the number to add to the list? : ')
+        if inp == 'done':
+            break
+        my_list.append(int(inp))
+    
+    x = max(my_list)
+    y = min(my_list)
+    length = len(my_list)
+    summy = sum(my_list)
+    my_list.sort()
+    
+    print('The max is:', x, 'and the min is:', y)
+    print('Length:', length)
+    print('Sum:', summy)
+    print('Sorted list:', my_list)
+    
+
+lister()

@@ -1,0 +1,24 @@
+numbers = []
+total = 0
+count = 0
+
+while True:
+    try:
+        user_input = input("Enter a number (or 'done' to exit): ")
+        
+        if user_input.lower() == 'done':
+            break
+        
+        number = float(user_input)
+        numbers.append(number)
+        total += number
+        count += 1
+        
+    except ValueError:
+        print("Invalid input. Please enter a valid number or 'done' to exit.")
+
+if count > 0:
+    print('the min num = ',min(numbers))
+    print('the max num = ',max(numbers))
+else:
+    print("No numbers were entered.")
